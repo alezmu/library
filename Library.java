@@ -4,8 +4,7 @@ class Library{
 		final String appName ="Biblioteka v0.1";
 		
 		Book book1 = new Book();
-		
-		
+        	
 		book1.title = "W pustyni i w puszczy";
 		book1.author = "Henryk Sienkiewicz";
 		book1.releaseDate = 2010;
@@ -21,7 +20,5 @@ class Library{
 		System.out.println(book1.pages);
 		System.out.println(book1.publisher);
 		System.out.println(book1.isbn);
-		
-		
 	}
 }

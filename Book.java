@@ -5,5 +5,4 @@ class Book{
 	int pages;
 	String publisher;
 	String isbn;
-	
 }
