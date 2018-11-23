@@ -6,9 +6,9 @@ import data.Library;
 import utils.DataReader;
 
 public class LibraryControl {
-    public final static int  exit = 0;
-    public final static int  addBook = 1;
-    public final static int  printBooks = 2;
+    public static final int  EXIT = 0;
+    public static final int  ADD_BOOK = 1;
+    public static final int  PRINT_BOOKS = 2;
 
     // zmienna do komunikacji z użytkownikiem
     private DataReader dataReader;
@@ -27,12 +27,12 @@ public class LibraryControl {
         int option;
         printOptions();
 
-        while ((option=dataReader.getInt())!=exit){
+        while ((option=dataReader.getInt())!=EXIT){
             switch (option){
-                case addBook:
+                case ADD_BOOK:
                     addBook();
                     break;
-                case printBooks :
+                case PRINT_BOOKS :
                     printBooks();
                     break;
                     default:

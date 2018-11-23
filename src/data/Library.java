@@ -2,12 +2,12 @@ package data;
 
 
 public class Library {
-    final static int maxBook = 1000;
+    public final static int MAX_BOOK = 1000;
     private int bookNumber;
     private Book[] books;
 
     public Library() {
-        books = new Book[maxBook];
+        books = new Book[MAX_BOOK];
         bookNumber = 0;
     }
 
@@ -20,7 +20,7 @@ public class Library {
     }
 
     public void addBook(Book book) {
-        if (bookNumber < maxBook) {
+        if (bookNumber < MAX_BOOK) {
             books[bookNumber] = book;
             bookNumber++;
         } else {
