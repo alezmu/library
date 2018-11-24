@@ -1,22 +1,12 @@
 package data;
 
-public class Book{
+public class Book extends Publication{
 
 
-	private String title;
+
 	private String author;
-	private int releaseDate;
 	private int pages;
-	private String publisher;
 	private String isbn;
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
 
 	public String getAuthor() {
 		return author;
@@ -24,14 +14,6 @@ public class Book{
 
 	public void setAuthor(String author) {
 		this.author = author;
-	}
-
-	public int getReleaseDate() {
-		return releaseDate;
-	}
-
-	public void setReleaseDate(int releaseDate) {
-		this.releaseDate = releaseDate;
 	}
 
 	public int getPages() {
@@ -42,14 +24,6 @@ public class Book{
 		this.pages = pages;
 	}
 
-	public String getPublisher() {
-		return publisher;
-	}
-
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
-	}
-
 	public String getIsbn() {
 		return isbn;
 	}
@@ -58,11 +32,10 @@ public class Book{
 		this.isbn = isbn;
 	}
 
-	
-	public Book (String title , String author, int releaseDate, int pages, String publisher, String isbn){
-		setTitle(title);
+	public Book (String title , String author, int year, int pages, String publisher, String isbn){
+
 		setAuthor(author);
-		setReleaseDate(releaseDate);
+		setYear(year);
 		setPages(pages);
 		setPublisher(publisher);
 		setIsbn(isbn);
@@ -71,12 +44,12 @@ public class Book{
 	
 	
 	public void printInfo(){
-		System.out.println("title: "+ title);
-		System.out.println("author: "+ author);
-		System.out.println("releaseDate: " + releaseDate);
-		System.out.println("pages: " + pages);
-		System.out.println("publisher: " + publisher);
-		System.out.println("isbn: " + isbn);
+		System.out.println("title: "+ getTitle());
+		System.out.println("author: "+ getAuthor());
+		System.out.println("releaseDate: " + getYear());
+		System.out.println("pages: " + getPages());
+		System.out.println("publisher: " + getPublisher());
+		System.out.println("isbn: " + getIsbn());
 		System.out.println("-------------------");
 		System.out.println();
 	}
