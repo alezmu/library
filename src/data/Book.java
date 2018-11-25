@@ -33,11 +33,9 @@ public class Book extends Publication{
 	}
 
 	public Book (String title , String author, int year, int pages, String publisher, String isbn){
-
+		super(year,title,publisher);
 		setAuthor(author);
-		setYear(year);
 		setPages(pages);
-		setPublisher(publisher);
 		setIsbn(isbn);
 		
 	}

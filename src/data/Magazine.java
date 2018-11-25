@@ -30,12 +30,11 @@ public class Magazine extends  Publication {
     }
 
     public Magazine(String title, String publisher, String language, int day, int month, int year ){
-        setTitle(title);
-        setPublisher(publisher);
+       super(year, title, publisher);
         setLanguage(language);
         setDay(day);
         setMonth(month);
-        setYear(year);
+
     }
 
     public void printInfo(){
