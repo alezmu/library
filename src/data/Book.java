@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Objects;
+
 public class Book extends Publication{
 
 
@@ -41,14 +43,28 @@ public class Book extends Publication{
 	}
 	
 	
-	public void printInfo(){
-		System.out.println("title: "+ getTitle());
-		System.out.println("author: "+ getAuthor());
-		System.out.println("releaseDate: " + getYear());
-		System.out.println("pages: " + getPages());
-		System.out.println("publisher: " + getPublisher());
-		System.out.println("isbn: " + getIsbn());
-		System.out.println("-------------------");
-		System.out.println();
+
+
+	@Override
+	public String toString(){
+		return getTitle()+"; "+getAuthor()+"; "+ getYear()+"; "
+				+getPages()+"; "+getPublisher()+"; "+getIsbn();
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Book)) return false;
+		if (!super.equals(o)) return false;
+		Book book = (Book) o;
+		return getPages() == book.getPages() &&
+				Objects.equals(getAuthor(), book.getAuthor()) &&
+				Objects.equals(getIsbn(), book.getIsbn());
+	}
+
+	@Override
+	public int hashCode() {
+
+		return Objects.hash(super.hashCode(), getAuthor(), getPages(), getIsbn());
 	}
 }

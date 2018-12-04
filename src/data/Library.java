@@ -60,7 +60,8 @@ public class Library {
         System.out.println("Brak ksiazek w bibliotece");
     }else {
         for (int x = 0; x <bookNumber; x++){
-            books[x].printInfo();
+            System.out.println(books[x]);
+
         }
     }
     }
@@ -69,7 +70,7 @@ public class Library {
             System.out.println("Brak magazynów w bibliotece");
         }
         for(int i=0; i<magazineNumber; i++) {
-            magazines[i].printInfo();
+            System.out.println(magazines[i]);
         }
     }
 

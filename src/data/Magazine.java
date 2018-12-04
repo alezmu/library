@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Objects;
+
 public class Magazine extends  Publication {
     private int month;
     private int day;
@@ -37,14 +39,27 @@ public class Magazine extends  Publication {
 
     }
 
-    public void printInfo(){
-        System.out.println("title: "+ getTitle());
-        System.out.println("publisher: " + getPublisher());
-        System.out.println("language: "+ getLanguage());
-        System.out.println("Day: " + getDay());
-        System.out.println("Month: " + getMonth());
-        System.out.println("Year: " + getYear());
-        System.out.println("-------------------");
-        System.out.println();
+
+    @Override
+    public  String toString(){
+        return getTitle()+ "; "+getPublisher()+ "; "+getLanguage()+"; "+getDay()+": "+
+                getMonth()+": "+getYear();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Magazine)) return false;
+        if (!super.equals(o)) return false;
+        Magazine magazine = (Magazine) o;
+        return getMonth() == magazine.getMonth() &&
+                getDay() == magazine.getDay() &&
+                Objects.equals(getLanguage(), magazine.getLanguage());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(super.hashCode(), getMonth(), getDay(), getLanguage());
     }
 }
