@@ -1,5 +1,6 @@
 package data;
 
+import javax.xml.transform.sax.SAXTransformerFactory;
 import java.util.Objects;
 
 public class Magazine extends  Publication {
@@ -42,8 +43,19 @@ public class Magazine extends  Publication {
 
     @Override
     public  String toString(){
-        return getTitle()+ "; "+getPublisher()+ "; "+getLanguage()+"; "+getDay()+": "+
-                getMonth()+": "+getYear();
+        StringBuilder print = new StringBuilder(32);
+        print.append(getTitle());
+        print.append("; ");
+        print.append(getPublisher());
+        print.append("; ");
+        print.append(getLanguage());
+        print.append("; ");
+        print.append(getDay());
+        print.append(":");
+        print.append(getMonth());
+        print.append(":");
+        print.append(getYear());
+        return print.toString();
     }
 
     @Override
