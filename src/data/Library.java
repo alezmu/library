@@ -43,35 +43,25 @@ public class Library {
     }
 
 
-    private void addPublication(Publication pub){
-        if(publicationsNumber<MAX_PUBLICATIONS){
-            publications[publicationsNumber]=pub;
-            publicationsNumber++;
-        }else{System.out.println("Maksymalna liczba publikacji zostala osiagnieta");}
-    }
-
-    public void printBooks(){
-    int countBooks = 0;
-
-    for (int i = 0; i<publicationsNumber; i++){
-        if(publications[i]instanceof Book){
-            System.out.println(publications[i]);
-            countBooks++; }
-    }
-    if(countBooks==0){
-        System.out.println("Brak ksiazek w bibliotece"); }
-    }
-    public void printMagazines() {
-       int  countMagazine = 0;
-        for(int i=0; i<publicationsNumber; i++) {
-            if(publications[i]instanceof Magazine){
-            System.out.println(publications[i]);
-            countMagazine++;}
+    private void addPublication(Publication pub)throws ArrayIndexOutOfBoundsException{
+        if(publicationsNumber==MAX_PUBLICATIONS){
+           throw new ArrayIndexOutOfBoundsException("Maksymalna liczba publikacji zostala osiagnieta "+MAX_PUBLICATIONS);
         }
-        if(countMagazine == 0) {
-            System.out.println("Brak magazynów w bibliotece");
-        }
+        publications[publicationsNumber]=pub;
+        publicationsNumber++;
 
     }
+
+    @Override
+    public String toString(){
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0;i<publicationsNumber;i++){
+            builder.append(publications[i]);
+            builder.append("\n");
+        }
+        return builder.toString() ;
+    }
+
+
 
 }
